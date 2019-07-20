@@ -12,6 +12,12 @@
   .projects {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .resume {
+    .resume-section {
+      width: 70%;
+    }
+  }
 }
 
 //Tablets and Small Laptops
@@ -71,6 +77,12 @@
   .projects {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .resume {
+    .resume-section {
+      width: 80%;
+    }
+  }
 }
 
 //Smartphones
@@ -82,5 +94,12 @@
 
   .projects {
     grid-template-columns: 1fr;
+  }
+
+  .resume {
+    .resume-section {
+      width: 100%;
+      padding: 5%;
+    }
   }
 }

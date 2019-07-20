@@ -1,0 +1,159 @@
+.intro {
+  padding: 1.5rem 1.5rem;
+  background: #f7f7f7;
+  width: 100%;
+  display: inline-block;
+  //flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  .dp-img {
+    width: 250px;
+    height: 250px;
+    background: url("../img/dp.jpg");
+    border-radius: 50%;
+    border: solid 3px $secondary-color;
+    margin: auto;
+  }
+
+  .intro-text {
+    color: #000000;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    width: 40%;
+    text-align: center;
+    margin: auto;
+  }
+}
+
+.ktm-img {
+  margin: auto;
+  margin-top: 3rem;
+  background: $home-image;
+  width: 100%;
+  height: 100%;
+}
+
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    "bioimage bio bio"
+    "job1 job2 job3";
+  grid-template-columns: repeat(3, 1fr);
+
+  .bio-image {
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 50%;
+    border: $secondary-color 3px solid;
+  }
+
+  .bio {
+    grid-area: bio;
+  }
+
+  .job-1 {
+    grid-area: job1;
+    background: #728fa2;
+  }
+
+  .job-2 {
+    grid-area: job2;
+    background: #2c3531//#202027;
+  }
+
+  .job-3 {
+    grid-area: job3;
+    background: #344a64;
+  }
+
+  .job {
+    padding: 0.5rem;
+    border-bottom: $secondary-color 5px solid;
+
+    @include easeOut;
+    &:hover {
+      transform: scale(1.1);
+      @include easeOut;
+    }
+  }
+}
+
+.resume {
+  padding: 2.5rem 1.5rem;
+  background: #d6dfe4;
+  font-family: "Karla", sans-serif;
+  -webkit-font-smoothing: antialiased;
+
+  h2 {
+    color: #000;
+    text-align: center;
+  }
+
+  .resume-section {
+    display: grid;
+    grid-template-areas:
+      "sectionTitle sectionTitle sectionTitle"
+      "sectionContent sectionContent timeAddress"
+      "sectionMain sectionMain sectionMain";
+    color: #fff;
+    grid-row-gap: 1%;
+    padding: 3rem;
+    width: 50%;
+    margin: auto;
+    margin-top: 2rem;
+    background: #c06868;
+
+    //Education
+    .section-title {
+      grid-area: sectionTitle;
+      margin-left: 0;
+    }
+
+    //Vanderbilt University, Major, Minor
+    .section-content {
+      grid-area: sectionContent;
+    }
+
+    //date address
+    .duration {
+      grid-area: timeAddress;
+      margin-right: 0;
+    }
+
+    //sectionMain
+    .section-main {
+      grid-area: sectionMain;
+      width: 100%;
+    }
+  }
+}
+
+.contacts {
+  margin: 0;
+  padding: 5rem;
+  text-align: center;
+  background: $primary-color;
+
+  &-items {
+    display: inline-block;
+  }
+
+  .icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    padding: 0.4rem;
+
+    a {
+      margin-right: 1.5rem;
+
+      &:hover {
+        color: $secondary-color;
+        @include easeOut;
+      }
+    }
+  }
+}

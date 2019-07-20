@@ -1,8 +1,8 @@
-$primary-color: #444;
-$secondary-color: #eece1a;
+$primary-color: #123c69; //#444;
+$secondary-color: #5da2d5; //#ac3b61; //#eece1a;
 $show-home-image: true;
-$home-image: url(../img/background.jpg);
-$backgound-opacity: 0.6;
+$home-image: url(../img/try.jpg);
+$backgound-opacity: 0;
 
 @mixin easeOut {
   transition: all 0.4s ease-out;
@@ -11,7 +11,7 @@ $backgound-opacity: 0.6;
 @mixin background {
   @if $show-home-image {
     &#bg-img {
-      background: $home-image;
+      background: #fffefe;
       background-attachment: fixed;
       background-size: cover;
 
@@ -54,7 +54,7 @@ $backgound-opacity: 0.6;
 }
 
 @mixin mediaLg {
-  @media screen and (min-width: 769) and (max-width: 1170px) {
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
     @content;
   }
 }
