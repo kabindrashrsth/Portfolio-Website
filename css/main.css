@@ -95,6 +95,7 @@
     width: 250px;
     height: 250px;
     background: url("../img/dp.jpg");
+    background-position-x: -0.9em;
     border-radius: 50%;
     border: solid 3px #5da2d5;
     margin: auto; }
@@ -108,11 +109,14 @@
     margin: auto; }
 
 .ktm-img {
+  position: relative;
   margin: auto;
-  margin-top: 3rem;
-  background: url(../img/try.jpg);
-  width: 100%;
-  height: 100%; }
+  margin-top: 12%;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  background-image: url(../img/try.jpg);
+  background-repeat: repeat-x;
+  min-height: 100%; }
 
 .about-info {
   display: grid;
@@ -387,7 +391,8 @@ main {
     text-align: center; }
     main .lg-heading {
       line-height: 1;
-      margin-bottom: 1rem; }
+      margin-bottom: 1rem;
+      font-size: 3.4rem; }
   ul.menu-nav,
   div.menu-branding {
     float: none;
@@ -422,6 +427,8 @@ main {
     margin-top: 10vh; }
   .projects {
     grid-template-columns: 1fr; }
+  .lg-heading {
+    font-size: 3rem; }
   .resume .resume-section {
     width: 100%;
     padding: 5%; } }
