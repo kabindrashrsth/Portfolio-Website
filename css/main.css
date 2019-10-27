@@ -97,12 +97,12 @@
     background: url("../img/dp.jpg");
     background-position-x: -0.9em;
     border-radius: 50%;
-    border: solid 3px #5da2d5;
+    border: solid 3px rgba(196, 148, 46, 0.9);
     margin: auto; }
   .intro .intro-text {
     color: #000000;
     font-family: "Source Sans Pro", sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-weight: 400;
     width: 40%;
     text-align: center;
@@ -118,38 +118,9 @@
   background-repeat: repeat-x;
   min-height: 100%; }
 
-.about-info {
-  display: grid;
-  grid-gap: 30px;
-  grid-template-areas: "bioimage bio bio" "job1 job2 job3";
-  grid-template-columns: repeat(3, 1fr); }
-  .about-info .bio-image {
-    grid-area: bioimage;
-    margin: auto;
-    border-radius: 50%;
-    border: #5da2d5 3px solid; }
-  .about-info .bio {
-    grid-area: bio; }
-  .about-info .job-1 {
-    grid-area: job1;
-    background: #728fa2; }
-  .about-info .job-2 {
-    grid-area: job2;
-    background: #2c3531; }
-  .about-info .job-3 {
-    grid-area: job3;
-    background: #344a64; }
-  .about-info .job {
-    padding: 0.5rem;
-    border-bottom: #5da2d5 5px solid;
-    transition: all 0.4s ease-out; }
-    .about-info .job:hover {
-      transform: scale(1.1);
-      transition: all 0.4s ease-out; }
-
 .project-div {
   padding: 2.5rem 1.5rem;
-  background: #e8c2b7;
+  background: #fffefe;
   -webkit-font-smoothing: antialiased; }
   .project-div h2 {
     color: #000;
@@ -165,8 +136,16 @@
         border: 3px #fff solid; }
         .project-div .projects .item img:hover {
           opacity: 0.5;
-          border-color: #5da2d5;
+          cursor: pointer;
+          border-color: rgba(196, 148, 46, 0.9);
           transition: all 0.4s ease-out; }
+
+#my-tools i {
+  font-size: 5rem;
+  padding: 1.5rem; }
+  #my-tools i:hover {
+    color: rgba(196, 148, 46, 0.9);
+    transition: all 0.4s ease-out; }
 
 .resume {
   padding: 2.5rem 1.5rem;
@@ -212,8 +191,67 @@
     .contacts .icons a {
       margin-right: 1.5rem; }
       .contacts .icons a:hover {
-        color: #5da2d5;
+        color: #fbcc34;
         transition: all 0.4s ease-out; }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  color: #000000;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); }
+
+.modal-content {
+  background-color: #f4f4f4;
+  margin: 4.09% auto;
+  width: 60%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-name: modalopen;
+  animation-duration: 0.5s; }
+
+.closeBtn {
+  color: #ffffff;
+  float: right;
+  font-size: 30px; }
+
+.closeBtn:hover,
+.closeBtn:focus {
+  color: #5da2d5;
+  text-decoration: none;
+  cursor: pointer; }
+
+.modal-header h2 {
+  margin: 0; }
+
+.modal-header {
+  background: #123c69;
+  padding: 0.5rem;
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.2rem; }
+
+.modal-body {
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 1.2rem; }
+  .modal-body img {
+    display: block;
+    width: 70%;
+    height: 100%;
+    border: 2px #5da2d5 solid;
+    margin: auto;
+    margin-bottom: 1%; }
+
+@keyframes modalopen {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 
 * {
   box-sizing: border-box;
@@ -224,7 +262,7 @@ body {
   color: #fff;
   height: 100%;
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 1.5; }
   body#bg-img {
     background: #fffefe;
@@ -255,10 +293,18 @@ h3 {
   h2.sm-heading,
   h3.sm-heading {
     margin-bottom: 1rem;
+    font-size: 3rem;
     padding: 0.2rem 1rem;
     color: #000;
-    text-align: center;
-    font-family: "Inconsolata", monospace; }
+    text-align: center; }
+  h1.sub-heading,
+  h2.sub-heading,
+  h3.sub-heading {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    padding: 0.2rem 1rem;
+    color: #123c69;
+    text-align: center; }
 
 a {
   color: #fff;
@@ -298,40 +344,6 @@ main {
     main#home h1 {
       margin-top: 20vh; }
 
-/*
-.about-info {
-  display: grid;
-  grid-gap: 30px;
-  grid-template-areas: "job1 job2 job3";
-  grid-template-columns: repeat(3, 1fr);
-
-  .job-1 {
-    grid-area: job1;
-    background: #728fa2;
-  }
-
-  .job-2 {
-    grid-area: job2;
-    background: #2c3531//#202027;
-  }
-
-  .job-3 {
-    grid-area: job3;
-    background: #344a64;
-  }
-
-  .job {
-    // background: lighten($primary-color, 5);
-    padding: 0.5rem;
-    border-bottom: $secondary-color 5px solid;
-    @include easeOut;
-    &:hover {
-      transform: scale(1.1);
-      @include easeOut;
-    }
-  }
-}
-*/
 .boxes {
   display: flex;
   flex-wrap: wrap;

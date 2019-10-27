@@ -7,11 +7,28 @@ const menuNav = document.querySelector(".menu-nav");
 const navItems = document.querySelectorAll(".nav-item");
 
 //Set Initial State Of Menu
-
 let showMenu = false;
 
 menuBtn.addEventListener("click", toggleMenu);
 
+// Listen for outside click
+window.addEventListener("click", outsideMenuClick);
+
+// Function to close menu if outside click
+function outsideMenuClick(e) {
+  if (e.target == menu) {
+    menuBtn.classList.remove("close");
+    menu.classList.remove("show");
+    menuNav.classList.remove("show");
+    //menuBranding.classList.remove("show");
+    navItems.forEach(item => item.classList.remove("show"));
+
+    //Set Menu State
+    showMenu = false;
+  }
+}
+
+// Function for menu
 function toggleMenu() {
   if (!showMenu) {
     menuBtn.classList.add("close");
@@ -35,7 +52,6 @@ function toggleMenu() {
 }
 
 // Scroll reveal
-
 window.sr = ScrollReveal();
 sr.reveal(".lg-heading", {
   duration: 1800,
@@ -50,24 +66,26 @@ sr.reveal(".ktm-img", {
 });
 
 sr.reveal(".sm-heading", {
-  duration: 1800,
-  origin: "top"
+  duration: 1850,
+  origin: "bottom",
+  distance: "30px"
+});
+
+sr.reveal(".item", {
+  duration: 1850,
+  origin: "bottom",
+  distance: "30px"
+});
+
+sr.reveal("#about", {
+  duration: 1850,
+  origin: "bottom",
+  distance: "30px"
 });
 
 // Scrolling and highlighing
 
 let navItem = document.querySelectorAll(".nav-item");
-// let about = document.getElementById("about");
-
-// about.addEventListener("mouseover", h);
-
-// function h() {
-//   console.log(7);
-//   for (let i = 0; i < 5; i++) {
-//     navItem[i].classList.remove("current");
-//   }
-//   navItem[1].classList.add("current");
-// }
 
 for (let i = 0; i < 5; i++) {
   navItem[i].addEventListener("click", highlight);
@@ -79,4 +97,39 @@ function highlight(e) {
   }
 
   e.target.parentNode.classList.add("current");
+}
+
+// Get modal element
+var modal = document.getElementById("simpleModal");
+
+// Get open modal button
+var modalBtn = document.getElementById("modalBtn");
+
+// Get close button
+var closeBtn = document.getElementsByClassName("closeBtn")[0];
+
+// Listen for open click
+modalBtn.addEventListener("click", openModal);
+
+// Listen for close click
+closeBtn.addEventListener("click", closeModal);
+
+// Listen for outside click
+window.addEventListener("click", outsideClick);
+
+// Function to open modal
+function openModal() {
+  modal.style.display = "block";
+}
+
+// Function to close modal
+function closeModal() {
+  modal.style.display = "none";
+}
+
+// Function to close modal if outside click
+function outsideClick(e) {
+  if (e.target == modal) {
+    modal.style.display = "none";
+  }
 }
