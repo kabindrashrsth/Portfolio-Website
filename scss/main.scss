@@ -13,7 +13,8 @@ body {
   color: set-text-color($primary-color);
   height: 100%;
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Roboto", sans-serif;
+  //font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
 }
 
@@ -32,10 +33,20 @@ h3 {
 
   &.sm-heading {
     margin-bottom: 1rem;
+    font-size: 3rem;
     padding: 0.2rem 1rem;
     color: #000;
     text-align: center;
-    font-family: "Inconsolata", monospace;
+    //font-family: "Inconsolata", monospace;
+    //background: //rgba(lighten($primary-color, 2), 0.5);
+  }
+  &.sub-heading {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    padding: 0.2rem 1rem;
+    color: $primary-color;
+    text-align: center;
+    //font-family: "Inconsolata", monospace;
     //background: //rgba(lighten($primary-color, 2), 0.5);
   }
 }
@@ -94,41 +105,6 @@ main {
     }
   }
 }
-
-/*
-.about-info {
-  display: grid;
-  grid-gap: 30px;
-  grid-template-areas: "job1 job2 job3";
-  grid-template-columns: repeat(3, 1fr);
-
-  .job-1 {
-    grid-area: job1;
-    background: #728fa2;
-  }
-
-  .job-2 {
-    grid-area: job2;
-    background: #2c3531//#202027;
-  }
-
-  .job-3 {
-    grid-area: job3;
-    background: #344a64;
-  }
-
-  .job {
-    // background: lighten($primary-color, 5);
-    padding: 0.5rem;
-    border-bottom: $secondary-color 5px solid;
-    @include easeOut;
-    &:hover {
-      transform: scale(1.1);
-      @include easeOut;
-    }
-  }
-}
-*/
 
 //Contact Page
 
