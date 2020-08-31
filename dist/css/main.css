@@ -108,8 +108,12 @@
     text-align: center;
     margin: auto; }
 
+.title-heading {
+  grid-area: title; }
+
 .ktm-img {
   position: relative;
+  grid-area: ktmimage;
   margin: auto;
   margin-top: 12%;
   margin-bottom: 0px;
@@ -117,6 +121,10 @@
   background-image: url(../img/try.jpg);
   background-repeat: repeat-x;
   min-height: 100%; }
+
+.blank {
+  grid-area: bottom;
+  background-color: black; }
 
 .project-div {
   padding: 2.5rem 1.5rem;
